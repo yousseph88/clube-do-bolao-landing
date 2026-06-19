@@ -663,7 +663,7 @@
           return;
         }
 
-        window.open(data.checkout_url, "_blank", "noopener,noreferrer");
+        window.location.assign(data.checkout_url);
 
       } catch (err) {
         console.error(err);
