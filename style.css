@@ -1684,12 +1684,13 @@ footer {
   .prediction-match {
   grid-template-columns: 1fr auto 1fr;
   gap: 10px;
-}
+  }
 
   .versus {
     margin: 0;
   }
-}.prediction-cta {
+  }
+.prediction-cta {
   width: 100%;
   max-width: 320px;
   margin: 28px auto 0;
@@ -2069,4 +2070,102 @@ footer {
   .payments-value {
     font-size: 24px;
   }
+}
+@media (max-width: 480px) {
+  .prediction-card,
+  .ranking-card,
+  .history-card,
+  .payments-card {
+    max-width: 100%;
+    padding: 20px 16px;
+    border-radius: 22px;
+    box-shadow:
+      6px 6px 0 #000,
+      0 18px 50px rgba(0,0,0,.28);
+  }
+
+  .prediction-card *,
+  .ranking-card *,
+  .history-card *,
+  .payments-card * {
+    font-size: calc(1em - 2px);
+  }
+
+  .history-match {
+    font-size: 1.25rem;
+  }
+
+  .history-score strong {
+    font-size: 1.45rem;
+  }
+
+  .payments-item h4 {
+    font-size: 20px;
+  }
+
+  .payments-value {
+    font-size: 22px;
+  }
+
+  .payments-date {
+    font-size: 14px;
+  }
+
+  .ranking-row {
+    grid-template-columns: 44px 1fr 54px 54px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .ranking-header {
+    font-size: 11px;
+  }
+
+  .payments-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .team-name {
+    font-size: 1.5rem;
+  }
+
+  .versus {
+    font-size: 1.2rem;
+  }
+
+  .score-number {
+    font-size: 18px;
+  }
+
+  .score-btn {
+    font-size: 18px;
+  }
+
+  .history-match {
+    font-size: 1.25rem;
+  }
+
+  .history-score strong {
+    font-size: 1.45rem;
+  }
+
+  .payments-item h4 {
+    font-size: 20px;
+  }
+
+  .payments-value {
+    font-size: 22px;
+  }
+
+  .payments-date {
+    font-size: 14px;
+  }
+
+  .ranking-row {
+    font-size: 13px;
+  }
+
 }
