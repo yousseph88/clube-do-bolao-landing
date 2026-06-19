@@ -663,7 +663,7 @@
           return;
         }
 
-        window.location.assign(data.checkout_url);
+        document.location.href = data.checkout_url;
 
       } catch (err) {
         console.error(err);
