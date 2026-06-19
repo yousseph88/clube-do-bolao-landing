@@ -633,51 +633,61 @@
 
   ...
 
-  <button onclick="comprarPlanoTeste()">
-    TESTAR CHECKOUT
-  </button>
+<button onclick="prepararCheckout('pro')">
+  TESTAR SOFT REDIRECT
+</button>
 
-  <script>
-    async function comprarPlanoTeste() {
-      try {
-        const response = await fetch(
-          "https://dymwbyoqmvmoafduewpx.supabase.co/functions/v1/create-checkout",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              plan_code: "pro",
-              flow: "landing"
-            })
-          }
-        );
+<div id="checkoutArea"></div>
 
-        const data = await response.json();
+<script>
+async function prepararCheckout(planCode) {
 
-        console.log("Resposta:", data);
+  const checkoutArea =
+    document.getElementById("checkoutArea");
 
-        if (!response.ok) {
-          alert("Erro ao criar checkout");
-          return;
-        }
+  checkoutArea.innerHTML =
+    "Preparando checkout...";
 
-        if (data.checkout_url) {
-  const link = document.createElement("a");
-  link.href = data.checkout_url;
-  link.target = "_self";
-  link.rel = "noopener noreferrer";
-  document.body.appendChild(link);
-  link.click();
-}
+  try {
 
-      } catch (err) {
-        console.error(err);
-        alert("Erro de conexão");
+    const response = await fetch(
+      "https://dymwbyoqmvmoafduewpx.supabase.co/functions/v1/create-checkout",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          plan_code: planCode,
+          flow: "landing"
+        })
       }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data.checkout_url) {
+      checkoutArea.innerHTML =
+        "Não foi possível iniciar o checkout.";
+      return;
     }
-  </script>
+
+    checkoutArea.innerHTML = `
+      <a href="${data.checkout_url}">
+        Continuar para o checkout
+      </a>
+    `;
+
+  } catch (err) {
+
+    console.error(err);
+
+    checkoutArea.innerHTML =
+      "Erro de conexão.";
+
+  }
+}
+</script>
 
 </body> 
 
