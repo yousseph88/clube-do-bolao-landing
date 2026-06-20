@@ -42,7 +42,7 @@
   </nav>
 
   <div class="header-actions">
-    <a class="login-link" href="#">Entrar</a>
+    <a class="login-link" href="https://app.clubedobolaoapp.com.br/login">Entrar</a>
     <a class="header-cta" href="#planos">Criar bolão</a>
   </div>
 </header>
@@ -338,7 +338,7 @@
   <div class="history-card">
 
     <div class="history-pill">
-      Cirineu já palpitou
+      Júlio já palpitou
     </div>
 
     <div class="history-meta">
@@ -351,7 +351,7 @@
 
     <div class="history-scores">
       <div class="history-score">
-        <span>Palpite do Cirineu</span>
+        <span>Palpite de Júlio</span>
         <strong>3 x 1</strong>
       </div>
 
@@ -373,6 +373,8 @@
 <div class="experience-block">
 
   <div class="experience-copy">
+    <span class="exclusive-badge">EXCLUSIVO</span> <br>
+    <br>
     <span class="feature-label">ARRECADAÇÃO</span>
 
     <h3>
@@ -519,79 +521,95 @@
 
     -->
 
-    <section class="pricing" id="planos">
-      <p class="section-label">Planos do bolão</p>
+   <section class="pricing" id="planos">
+  <p class="section-label">Planos do bolão</p>
 
-      <h2>
-        Escolhe o tamanho<br />
-        da <span>resenha.</span>
-      </h2>
+  <h2>
+    Escolhe o tamanho<br />
+    da <span>resenha.</span>
+  </h2>
 
-      <p class="section-subtitle">
-        Do grupo da família até o bolão que toma conta do bairro.
-      </p>
+  <p class="section-subtitle">
+    Do grupo da família até o bolão que toma conta do bairro.
+  </p>
 
-      <div class="plans-grid">
-        <article class="plan-card">
-          <h3>Básico</h3>
-          <h4>O bolão <span>da galera</span></h4>
-          <ul>
-            <li>Até 25 participantes</li>
-            <li>Ranking automático</li>
-            <li>Convites por link</li>
-            <li>1 ano de acesso</li>
-            <li>Copa, Brasileirão e mais ligas</li>
-          </ul>
-          <div class="price">R$ 59,00</div>
-          <a href="#" class="plan-button">ESCOLHER PLANO</a>
-        </article>
+  <div class="plans-grid">
+    <article class="plan-card">
+      <h3>Básico</h3>
+      <h4>O bolão <span>da galera</span></h4>
+      <ul>
+        <li>Até 25 participantes</li>
+        <li>Ranking automático</li>
+        <li>Convites por link</li>
+        <li>1 ano de acesso</li>
+        <li>Copa, Brasileirão e mais ligas</li>
+      </ul>
+      <div class="price">R$ 59,00</div>
+      <button type="button" class="plan-button" onclick="prepararCheckout('basic', this)">
+  ESCOLHER PLANO
+</button>
 
-        <article class="plan-card featured">
-          <div class="badge">Mais escolhido</div>
-          <h3>Pro</h3>
-          <h4>Pra ninguém <span>perder uma rodada</span></h4>
-          <ul>
-            <li>Até 50 participantes</li>
-            <li>Ranking automático</li>
-            <li>Convites por link</li>
-            <li>1 ano de acesso</li>
-            <li>Copa, Brasileirão e mais ligas</li>
-      
-          </ul>
-          <div class="price">R$ 89,00</div>
-          <a href="#" class="plan-button yellow">ESCOLHER PLANO</a>
-        </article>
+<div class="checkout-area"></div>
+    </article>
 
-        <article class="plan-card">
-          <h3>Max</h3>
-          <h4>Pra resenha <span>grande</span></h4>
-          <ul>
-            <li>Até 150 participantes</li>
-            <li>Ranking automático</li>
-            <li>Convites por link</li>
-            <li>1 ano de acesso</li>
-            <li>Copa, Brasileirão e mais ligas</li>
-          </ul>
-          <div class="price">R$ 129,00</div>
-          <a href="#" class="plan-button">ESCOLHER PLANO</a>
-        </article>
+    <article class="plan-card featured">
+      <div class="badge">Mais escolhido</div>
+      <h3>Pro</h3>
+      <h4>Pra ninguém <span>perder uma rodada</span></h4>
+      <ul>
+        <li>Até 50 participantes</li>
+        <li>Ranking automático</li>
+        <li>Convites por link</li>
+        <li>1 ano de acesso</li>
+        <li>Copa, Brasileirão e mais ligas</li>
+      </ul>
+      <div class="price">R$ 89,00</div>
+      <button type="button" class="plan-button yellow" onclick="prepararCheckout('pro', this)">
+  ESCOLHER PLANO
+</button>
 
-        <article class="plan-card ultra">
-          <h3>Ultra</h3>
-          <h4>O dono <span>da Copa</span></h4>
-          <ul>
-            <li>Participantes ilimitados</li> 
-            <li>Ranking automático</li>
-            <li>Convites por link</li>
-            <li>1 ano de acesso</li>
-            <li>Copa, Brasileirão e mais ligas</li>
-          </ul>
-          <div class="price">R$ 199,00</div>
-          <a href="#" class="plan-button">ESCOLHER PLANO</a>
-        </article>
-      </div>
-    </section>
+<div class="checkout-area"></div>
+    </article>
 
+    <article class="plan-card">
+      <h3>Max</h3>
+      <h4>Pra resenha <span>grande</span></h4>
+      <ul>
+        <li>Até 150 participantes</li>
+        <li>Ranking automático</li>
+        <li>Convites por link</li>
+        <li>1 ano de acesso</li>
+        <li>Copa, Brasileirão e mais ligas</li>
+      </ul>
+      <div class="price">R$ 129,00</div>
+      <button type="button" class="plan-button yellow" onclick="prepararCheckout('max', this)">
+  ESCOLHER PLANO
+</button>
+
+<div class="checkout-area"></div>
+    </article>
+
+    <article class="plan-card ultra">
+      <h3>Ultra</h3>
+      <h4>O dono <span>da Copa</span></h4>
+      <ul>
+        <li>Participantes ilimitados</li>
+        <li>Ranking automático</li>
+        <li>Convites por link</li>
+        <li>1 ano de acesso</li>
+        <li>Copa, Brasileirão e mais ligas</li>
+      </ul>
+      <div class="price">R$ 199,00</div>
+      <button type="button" class="plan-button yellow" onclick="prepararCheckout('ultra', this)">
+  ESCOLHER PLANO
+</button>
+
+<div class="checkout-area"></div>
+    </article>
+  </div>
+
+ 
+</section>
     <section class="benefits">
       <div>
         <strong>Pagamento seguro</strong>
@@ -631,22 +649,30 @@
 
 <body>
 
-  ...
-
-<button onclick="prepararCheckout('pro')">
-  TESTAR SOFT REDIRECT
-</button>
-
+ 
 <div id="checkoutArea"></div>
 
+
 <script>
-async function prepararCheckout(planCode) {
+async function prepararCheckout(planCode, buttonElement) {
 
-  const checkoutArea =
-    document.getElementById("checkoutArea");
+const checkoutArea =
+  buttonElement.closest(".plan-card").querySelector(".checkout-area");
 
-  checkoutArea.innerHTML =
-    "Preparando checkout...";
+  checkoutArea.innerHTML = `
+    <div class="checkout-loading">
+      Preparando seu pedido...
+    </div>
+  `;
+
+  if (buttonElement) {
+    buttonElement.disabled = true;
+    buttonElement.dataset.originalText =
+      buttonElement.innerText;
+
+    buttonElement.innerText =
+      "Preparando...";
+  }
 
   try {
 
@@ -667,24 +693,51 @@ async function prepararCheckout(planCode) {
     const data = await response.json();
 
     if (!response.ok || !data.checkout_url) {
-      checkoutArea.innerHTML =
-        "Não foi possível iniciar o checkout.";
+
+      checkoutArea.innerHTML = `
+        <div class="checkout-error">
+          Não foi possível iniciar o checkout.
+          Tente novamente.
+        </div>
+      `;
+
       return;
     }
 
     checkoutArea.innerHTML = `
-      <a href="${data.checkout_url}">
-        Continuar para o checkout
-      </a>
+      <div class="checkout-ready">
+        <p>Seu pedido está pronto.</p>
+
+        <a
+          href="${data.checkout_url}"
+          class="checkout-link"
+        >
+          Continuar para o pagamento
+        </a>
+      </div>
     `;
 
   } catch (err) {
 
     console.error(err);
 
-    checkoutArea.innerHTML =
-      "Erro de conexão.";
+    checkoutArea.innerHTML = `
+      <div class="checkout-error">
+        Erro de conexão.
+        Tente novamente.
+      </div>
+    `;
 
+  } finally {
+
+    if (buttonElement) {
+
+      buttonElement.disabled = false;
+
+      buttonElement.innerText =
+        buttonElement.dataset.originalText ||
+        "Comprar";
+    }
   }
 }
 </script>
