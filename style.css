@@ -120,10 +120,12 @@ a {
   }
 
   .login-link {
-    display: none;
-  }
+  display: inline-flex;
+  align-items: center;
+}
 
   .header-cta {
+    display: none;
     padding: 12px 18px;
     font-size: 12px;
   }
