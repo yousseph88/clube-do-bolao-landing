@@ -729,18 +729,26 @@ const checkoutArea =
       return;
     }
 
-    checkoutArea.innerHTML = `
-      <div class="checkout-ready">
-        <p>Seu pedido está pronto.</p>
+checkoutArea.innerHTML = `
+  <div class="checkout-ready">
+    <p>Seu pedido está pronto.</p>
 
-        <a
-          href="${data.checkout_url}"
-          class="checkout-link"
-        >
-          Continuar para o pagamento
-        </a>
-      </div>
-    `;
+    <a
+      href="${data.checkout_url}"
+      class="checkout-link"
+      onclick="
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'CheckoutRedirect', {
+            plan_code: '${planCode}'
+          });
+        }
+      "
+    >
+      Continuar para o pagamento
+    </a>
+  </div>
+`;
+
 
   } catch (err) {
 
