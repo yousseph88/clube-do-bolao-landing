@@ -725,9 +725,13 @@ async function prepararCheckout(planCode, buttonElement) {
       return;
     }
 
-    shouldResetButton = false;
+shouldResetButton = false;
 
-    if (typeof fbq === "function") {
+if (buttonElement) {
+  buttonElement.style.display = "none";
+}
+
+if (typeof fbq === "function") {
       fbq("trackCustom", "CheckoutReady", {
         plan_code: planCode
       });
@@ -781,13 +785,18 @@ async function prepararCheckout(planCode, buttonElement) {
       </div>
     `;
 
+if (buttonElement) {
+  buttonElement.style.display = "";
+}    
+
   } finally {
-    if (buttonElement && shouldResetButton) {
-      buttonElement.disabled = false;
-      buttonElement.classList.remove("is-loading");
-      buttonElement.innerText =
-        buttonElement.dataset.originalText || "Comprar";
-    }
+if (buttonElement && shouldResetButton) {
+  buttonElement.disabled = false;
+  buttonElement.style.display = "";
+  buttonElement.classList.remove("is-loading");
+  buttonElement.innerText =
+    buttonElement.dataset.originalText || "Comprar";
+}
   }
 }
 </script>
