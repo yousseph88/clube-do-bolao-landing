@@ -2267,3 +2267,15 @@ footer {
 .plan-button:disabled {
   cursor: wait;
 }
+
+button:disabled,
+.is-loading {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.checkout-small {
+  margin-top: 4px;
+  font-size: 14px;
+  opacity: 0.75;
+}
